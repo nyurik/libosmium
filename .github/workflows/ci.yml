@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install libgeos-dev
+        # run: sudo apt-get install -y build-essential libboost-dev libprotozero-dev zlib1g-dev libosmium2-dev
+        run: sudo apt-get install -y libosmium2-dev
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: source .cargo-husky/hooks/pre-push
