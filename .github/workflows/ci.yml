@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install native dependencies
-        run: sudo apt-get install -y libosmium2-dev
+        run: sudo apt-get install -y libprotozero-dev
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - run: source .cargo-husky/hooks/pre-push

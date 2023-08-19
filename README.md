@@ -34,11 +34,12 @@ Methods whose behaviour is trivial enough are simply implemented directly in rus
 
 #### Build dependencies
 
-This package builds libosmium and therefore needs its [dependencies](https://osmcode.org/libosmium/manual.html#dependencies).
+* This repo uses submodules.  To clone it, use `git submodule update --init --recursive`.
+* This package builds libosmium and therefore needs its [dependencies](https://osmcode.org/libosmium/manual.html#dependencies).
 
 Install for debian:
 ```bash
-apt install build-essential libboost-dev libprotozero-dev zlib1g-dev libosmium2-dev
+apt install build-essential libboost-dev libprotozero-dev zlib1g-dev
 ```
 
 Install for arch:
